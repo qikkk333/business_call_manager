@@ -1,0 +1,23 @@
+# Environment variables - never commit these
+.env
+
+# Virtual environment
+medi/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Generated audio files from ElevenLabs
+app/static/audio/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
