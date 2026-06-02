@@ -22,3 +22,11 @@ def get_patient_by_phone(phone: str) -> dict | None:
     if result.data:
         return result.data[0]
     return None
+
+
+def get_available_doctors() -> list:
+    """
+    Return all available doctors from the database.
+    """
+    result = supabase.table("doctors").select("name, specialization").eq("is_available", True).execute()
+    return result.data or []

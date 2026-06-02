@@ -1,0 +1,21 @@
+MediVoice Dental Clinic - Treatment Pricing
+
+Cleaning: ₹500
+Filling (single tooth): ₹800
+Root Canal Treatment: ₹5,000 - ₹8,000
+Tooth Extraction (simple): ₹600
+Tooth Extraction (surgical): ₹1,500
+Teeth Whitening: ₹3,500
+Dental Consultation: ₹300
+X-Ray (single): ₹200
+X-Ray (full mouth OPG): ₹800
+Braces (metal): ₹30,000
+Braces (ceramic): ₹45,000
+Braces (invisible/clear aligners): ₹70,000
+
+Notes:
+- Prices are inclusive of all materials used during the procedure
+- Payment accepted: Cash, UPI, Credit/Debit Card, Net Banking
+- EMI available for treatments above ₹10,000
+- 10% discount for senior citizens above 60 years
+- Free consultation for children under 12 on first visit

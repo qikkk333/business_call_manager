@@ -1,0 +1,28 @@
+MediVoice Dental Clinic - Doctor Schedules and Availability
+
+IMPORTANT: This document has the highest priority for doctor availability.
+If this document states a doctor is on leave or unavailable on a specific date,
+treat that as authoritative even if the system shows them as available.
+
+DOCTORS
+
+Dr Priya Nair
+- Specialization: General Dentistry, Cosmetic Dentistry
+- Regular working days: Monday, Tuesday, Wednesday, Thursday, Friday
+- Off days: Saturday (every week)
+- Expertise: Cleaning, Filling, Whitening, Braces consultation
+
+Dr Krish
+- Specialization: Oral Surgery, Endodontics
+- Regular working days: Monday, Wednesday, Thursday, Friday, Saturday
+- Off days: Tuesday (every week)
+- Expertise: Root Canal, Extractions, Surgical procedures, X-rays
+
+PLANNED LEAVES
+- No planned leaves currently scheduled.
+
+NOTES
+- Both doctors are available 9:00 AM to 6:00 PM on their working days
+- For root canal and surgical extractions, Dr Krish is the preferred doctor
+- For cosmetic treatments and braces, Dr Priya Nair is the preferred doctor
+- Emergency appointments can be accommodated by either doctor subject to availability

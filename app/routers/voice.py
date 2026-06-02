@@ -8,9 +8,6 @@ router = APIRouter()
 
 # Base URL of this server — Twilio needs a public URL to fetch the audio files
 # Update this in .env whenever your Cloudflare tunnel URL changes
-BASE_URL = os.getenv("BASE_URL", "http://localhost:8000")
-
-
 def make_gather(action: str = "/voice/respond", timeout: int = 10) -> Gather:
     """Helper to create a Gather with consistent speech settings."""
     return Gather(
@@ -27,9 +24,11 @@ def play_text(gather_or_response, text: str):
     """
     Generate audio with ElevenLabs and attach it to a Gather or VoiceResponse.
     Twilio fetches the audio file from our /audio/ static endpoint and plays it.
+    BASE_URL is read here (not at module level) so it always picks up the latest .env value.
     """
+    base_url = os.getenv("BASE_URL", "http://localhost:8000")
     filename = tts_service.text_to_speech(text)
-    audio_url = f"{BASE_URL}/audio/{filename}"
+    audio_url = f"{base_url}/audio/{filename}"
     gather_or_response.play(audio_url)
 
 
@@ -46,7 +45,7 @@ def test_llm(request: TestMessageRequest):
     Sends message through LLM then dispatcher and returns both raw LLM result and the final action taken.
     """
     llm_result = llm_service.get_llm_response(request.message, request.session_id)
-    final_response = action_dispatcher.dispatch(llm_result, request.session_id, request.phone)
+    final_response = action_dispatcher.dispatch(llm_result, request.session_id, request.phone, original_message=request.message)
     return {
         "llm_result": llm_result,
         "action_taken": final_response
@@ -93,7 +92,7 @@ async def respond_to_patient(
 
     # Run through LLM and dispatcher
     llm_result = llm_service.get_llm_response(SpeechResult, CallSid)
-    final_response = action_dispatcher.dispatch(llm_result, CallSid, From)
+    final_response = action_dispatcher.dispatch(llm_result, CallSid, From, original_message=SpeechResult)
 
     # Speak the LLM response and wait for patient's next input
     gather = make_gather()
